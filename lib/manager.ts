@@ -1,24 +1,23 @@
-import { Behaviour } from "./behaviour";
-import { Cabbage } from "./cabbage";
+import { CabbageBehaviour } from "./contracts/cabbageBehaviour";
 
 class BehaviorRegistry {
-    private static _behaviours: Behaviour[] = [];
+    private static _behaviours: CabbageBehaviour[] = [];
 
-    static addBehaviours<T extends Behaviour>(behaviours: T[]): Behaviour[] {
+    static addBehaviours<T extends CabbageBehaviour>(behaviours: T[]): CabbageBehaviour[] {
         behaviours[0].setEntryCabbage();
-        behaviours[0].cabbage.openHeadlessChromeWindow();
+        // behaviours[0].cabbage.openHeadlessChromeWindow();
         BehaviorRegistry._behaviours.push(...behaviours);
 
         return BehaviorRegistry._behaviours;
     }
 
-    static getBehaviours(): Behaviour[] {
+    static getBehaviours(): CabbageBehaviour[] {
         return BehaviorRegistry._behaviours;
     }
 }
 
-class CabbageManager<T extends Behaviour = Behaviour> {
-    from(behaviours: T[]): Promise<Behaviour[]> {
+class CabbageManager<T extends CabbageBehaviour = CabbageBehaviour> {
+    from(behaviours: T[]): Promise<CabbageBehaviour[]> {
         return Promise.resolve(BehaviorRegistry.addBehaviours(behaviours));
     }
 }

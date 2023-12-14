@@ -1,3 +1,5 @@
 export * from "./manager";
-export * from "./cabbage";
-export * from "./behaviour";
+export * from "./cabbageCanvas";
+export * from "./contracts/cabbageBehaviour";
+export * from "./mixin/cabbageBehaviourBase";
+export { Behaviour } from "./types/behaviourTypes";

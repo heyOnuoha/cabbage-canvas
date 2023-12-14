@@ -1,3 +1,6 @@
-import { Behaviour } from "../behaviour";
+import { CabbageBehaviour } from "../contracts/cabbageBehaviour";
+import { CabbageBehaviourMixin } from "../mixin/cabbageBehaviourBase";
 
-// export type BehaviourMap =  { [key: string]: Behaviour[] };
+export type Behaviour = CabbageBehaviour & CabbageBehaviourMixin;
+
+export type Scene = CabbageBehaviour;
