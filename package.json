@@ -19,6 +19,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "canvas": "^2.11.2",
     "puppeteer": "^21.6.0"
   }
 }

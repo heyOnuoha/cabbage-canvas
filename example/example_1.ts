@@ -1,13 +1,17 @@
-import { Behaviour } from "../lib/behaviour";
-import { Cabbage } from "../lib/cabbage";
+import { CabbageBehaviour } from "../lib";
+import { Box } from "../lib/model/Box";
+import { Point } from "../lib/model/Point";
 
-export class Example1 extends Behaviour {
-    protected start(): Cabbage {
-        const cabbage = Cabbage.createCabbageInstance(800, 800);
+export class Example extends CabbageBehaviour {
+    public start() {
+        this.setSize(800, 800);
 
-        return cabbage;
+        return "#my-canvas";
     }
-    protected draw(): void {
+
+    public draw(): void {
         console.log("test");
+
+        this.createRectangle(new Point(2, 4), new Box(100, 200));
     }
 }
